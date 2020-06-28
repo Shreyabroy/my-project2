@@ -1,0 +1,9 @@
+.content-item{
+    padding: 10px;
+    text-decoration: none;
+    color: darkblue;
+}
+
+.content-item:hover{
+    text-decoration: underline;
+}

@@ -1,0 +1,54 @@
+<div class="container">
+  
+    <div class="form-group">
+      <label>Enter address</label>
+      <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+    </div>
+  
+    <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+      <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+        (dragEnd)="markerDragEnd($event)"></agm-marker>
+    </agm-map>
+  
+    <h5>Address: {{address}}</h5>
+    <div>Latitude: {{latitude}}</div>
+    <div>Longitude: {{longitude}}</div>
+  </div>
+  <div class="request-page">
+    <mat-card class="mat-elevation-z12">
+      <mat-card-title style="text-align:centre;">Emergency Request</mat-card-title>
+            <mat-card-content>
+              <form action="">
+                <mat-form-field>
+                  <input
+                    matInput
+                    placeholder="Number of Members"
+                    required
+                    name="numberofmembers"
+                    ngModel
+                    #numberofmembers>
+                </mat-form-field>
+                <mat-form-field>
+                  <input
+                  matInput
+                  required>
+                  <mat-radio-button> Police</mat-radio-button>
+                  <mat-radio-button> Fire Brigade</mat-radio-button>
+                  <mat-radio-button> Ambulance</mat-radio-button>
+                  <mat-radio-button> Rescue</mat-radio-button>
+                  <mat-radio-button> Transporter</mat-radio-button>
+                  <mat-radio-button> Others</mat-radio-button>
+                </mat-form-field>
+                    <button
+                  mat-raised-button
+                  color="primary"
+                  class="submit-button">
+                  Submit
+                </button>
+              </form>
+                
+            </mat-card-content>
+      </mat-card>
+  </div>
+  
+                  
