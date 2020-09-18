@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from './../../services/user.service';
+import { UserService } from './../../server/user.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,11 +7,11 @@ import { UserService } from './../../services/user.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-  public: IUser;
+  user: IUser;
   submitted = false;
 
   constructor(private userService: UserService) {
-    this.public = {
+    this.user = {
       firstname: '',
       lastname: '',
       age: 0,
@@ -31,7 +31,7 @@ export class SignInComponent implements OnInit {
   }
 
   saveUser() {
-    const data = { ...this.public };
+    const data = { ...this.user };
     data.usertype = 'normal';
     data.authmethod = 'normal';
 
@@ -48,7 +48,7 @@ export class SignInComponent implements OnInit {
 
   newUser() {
     this.submitted = false;
-    this.public = {
+    this.user = {
       firstname: '',
       lastname: '',
       age: 0,

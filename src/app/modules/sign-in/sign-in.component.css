@@ -34,14 +34,7 @@ button.btn-success {
   transition: 0.1s ease;
   cursor: pointer;
 }
-input[type="button"]:hover,
-input[type="button"]:focus,
-button.btn-success:hover,
-button.btn-success:focus {
-  opacity: 0.8;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: 0.1s ease;
-}
+
 
 input[type="button"]:active,
 button.btn-success:active {

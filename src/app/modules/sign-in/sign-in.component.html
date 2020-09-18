@@ -70,9 +70,10 @@
                                 <input
                                   matInput
                                   placeholder="First Name"
+                                  type= "text"
                                   required
                                   name="firstname"
-                                  ngModel
+                                  (ngModel)="user.firstname"
                                   #firstname>
                                   <mat-icon matSuffix>lock</mat-icon>
                               </mat-form-field>
@@ -80,9 +81,10 @@
                                 <input
                                   matInput
                                   placeholder="Last Name"
+                                  type="text"
                                   required
                                   name="lastname"
-                                  ngModel
+                                  (ngModel)="user.lastname"
                                   #lastname>
                                   <mat-icon matSuffix>lock</mat-icon>
                               </mat-form-field>
@@ -90,9 +92,10 @@
                                 <input
                                   matInput
                                   placeholder="Age"
+                                  type="number"
                                   required
                                   name="age"
-                                  ngModel
+                                  (ngModel)="user.age"
                                   #age>
                                   <mat-icon matSuffix>lock</mat-icon>
                               </mat-form-field>
@@ -100,9 +103,10 @@
                                 <input
                                   matInput
                                   placeholder="Gender"
+                                  type="text"
                                   required
                                   name="gender"
-                                  ngModel
+                                  (ngModel)="user.gender"
                                   #gender>
                                   <mat-icon matSuffix>lock</mat-icon>
                                   <mat-radio-button>Male</mat-radio-button>
@@ -113,9 +117,10 @@
                                 <input
                                   matInput
                                   placeholder="User Name"
+                                  type="text"
                                   required
                                   name="username"
-                                  ngModel
+                                  (ngModel)="user.username"
                                   #username>
                                 <mat-icon matSuffix>perm_identity</mat-icon>
                                 <mat-error
@@ -128,9 +133,10 @@
                                 <input
                                   matInput
                                   placeholder="Email"
+                                  type="text"
                                   required
                                   name="email"
-                                  ngModel
+                                  (ngModel)="user.email"
                                   #email>
                                   <mat-error *ngIf="email.invalid">Email is required</mat-error>
                                 <mat-icon matSuffix>email</mat-icon>
@@ -145,7 +151,7 @@
                                   required
                                   minlength="6"
                                   name="password"
-                                  ngModel
+                                  (ngModel)="user.password"
                                   #password>
                                   <mat-error
                                     *ngIf="password.errors && password.errors.required">
@@ -177,9 +183,10 @@
                                 <input
                                 matInput
                                 placeholder="Address"
+                                type="text"
                                 required
                                 name="address"
-                                ngModel
+                                (ngModel)="user.address"
                                 #address>
                               <mat-icon matSuffix>lock</mat-icon>
                             </mat-form-field>
@@ -187,25 +194,41 @@
                                 <input
                                 matInput
                                 placeholder="Contact Number"
-                                type="tel"
+                                type="number"
                                 required
                                 name="contactnumber"
-                                ngModel
+                                (ngModel)="user.contactnumber"
                                 #contactnumber>
                               <mat-icon matSuffix>lock</mat-icon>
                             </mat-form-field>
-                              
-                              
-                            <input type="button" name="signup_submit" value="Register" (click)="saveUser()" />
-                          </div>
-                    
+                            <div><button
+                              (click)="saveUser()"
+                            mat-raised-button
+                            color="primary"
+                            class="login-button">
+                            Register
+                          </button>
                           <div *ngIf="submitted">
                             <h4>You submitted successfully!</h4>
-                            <button class="btn btn-success" (click)="newUser()">Go Back</button>
-                          </div>
-                      
+                            <button class="btn btn-success" (click)="newUser()">Go Back</button>>
+                          
+                        </div>
+                                
+                            
+                             
+                           
+                    </div>
+                        </div>           
+                          
+                             
+                              
+                            
+
                         
-                            </form>
+                            
+                      
+                    </form>    
+
                 </div>
                     
               

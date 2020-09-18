@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const Organization = sequelize.define("organization", {
+  const User = sequelize.define("user", {
     firstname: {
       type: Sequelize.STRING
     },
@@ -21,17 +21,8 @@ module.exports = (sequelize, Sequelize) => {
     password: {
       type: Sequelize.STRING
     },
-    type: {
-      type: Sequelize.STRING
-    },
-    department: {
-      type: Sequelize.STRING
-    },
-    position: {
-      type: Sequelize.STRING
-    },
     address: {
-      type: Sequelize.STRING 
+      type: Sequelize.STRING
     },
     pincode: {
       type: Sequelize.INTEGER
@@ -45,7 +36,8 @@ module.exports = (sequelize, Sequelize) => {
     authmethod: {
       type: Sequelize.STRING
     },
+    
   });
 
-  return Organization;
+  return User;
 };

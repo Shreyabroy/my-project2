@@ -1,5 +1,5 @@
 const db = require("../models");
-const Public = db.publics;
+const User = db.users;
 const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
@@ -12,10 +12,10 @@ exports.create = (req, res) => {
   }
 
   // Create a User
-  const public = {...req.body};
+  const user = {...req.body};
 
   // Save User in the database
-  Public.create(public)
+  User.create(user)
     .then(data => {
       res.send(data);
     })
@@ -26,3 +26,4 @@ exports.create = (req, res) => {
       });
     });
 };
+
